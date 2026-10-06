@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(kotlinx.plugins.jetbrains.kotlin.android)
+    alias(kotlinx.plugins.jetbrains.kotlin.compose)
 
     alias(libs.plugins.google.dagger.hilt.android)
     alias(libs.plugins.google.devtools.ksp)
@@ -35,20 +35,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
     }
 
     packaging {
@@ -146,8 +138,4 @@ tasks {
             "-opt-in=androidx.compose.animation.graphics.ExperimentalAnimationGraphicsApi",
         )
     }
-}
-
-hilt {
-    enableAggregatingTask = false
 }

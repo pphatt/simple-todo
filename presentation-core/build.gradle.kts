@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(kotlinx.plugins.jetbrains.kotlin.android)
+    alias(kotlinx.plugins.jetbrains.kotlin.compose)
 }
 
 android {
@@ -18,10 +18,6 @@ android {
         compose = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -33,12 +29,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 

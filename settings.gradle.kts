@@ -19,6 +19,10 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+plugins {
+    // Lets Gradle download the JDK pinned in gradle/gradle-daemon-jvm.properties when it isn't installed
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
 dependencyResolutionManagement {
     versionCatalogs {
         create("compose") {

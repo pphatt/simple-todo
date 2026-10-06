@@ -2,10 +2,12 @@
 leakcanary = "2.14"
 okhttp_version = "5.0.0-alpha.14"
 moshi = "1.15.1"
-hilt = "2.48"
+hilt = "2.60.1"
 androidx-hilt = "1.2.0"
 retrofit = "2.11.0"
-agp = "8.5.2"
+ksp = "2.3.12"
+room = "2.8.5"
+agp = "9.4.1"
 
 [libraries]
 okhttp-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp_version" }
@@ -39,16 +41,16 @@ google-hilt-android-testing = { module = "com.google.dagger:hilt-android-testing
 
 junit = { group = "junit", name = "junit", version = "4.13.2" }
 
-room-runtime = "androidx.room:room-runtime:2.5.2"
-room-complier = "androidx.room:room-compiler:2.5.2"
-room-ktx = "androidx.room:room-ktx:2.5.2"
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-complier = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 
 google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.9.22-1.0.17" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 [bundles]
 okhttp = ["okhttp-core", "okhttp-logging", "okhttp-brotli", "okhttp-dnsoverhttps"]
